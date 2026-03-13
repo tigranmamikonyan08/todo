@@ -1,0 +1,14 @@
+.addBtn {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
