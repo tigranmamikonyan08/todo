@@ -11,15 +11,14 @@ export type Todo = {
 
 function App() {
   
-  const [txt,setTxt] = useState<string>('')
   const [data,setData] = useState<Todo[]>([])
 
-  const addTodo = () => {
+  const addTodo = (name:string) => {
     setData([
       ...data,
       {
         id: Math.random(),
-        txt,
+        txt:name,
         completed: false
       }
     ])
@@ -50,7 +49,7 @@ function App() {
   return (
     <div className='todo'>
         <h1>Todo</h1>
-        <TodoForm txt = {txt} setTxt = {setTxt} addTodo = {addTodo}/>
+        <TodoForm addTodo = {addTodo}/>
         <TodoList checkTodo={checkTodo} removeBtn = {removeBtn} data = {data}/>
     </div>
   )

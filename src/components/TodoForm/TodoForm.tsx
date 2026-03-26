@@ -1,17 +1,17 @@
 import './TodoForm.css'
+import { useState } from 'react'
 
 type TodoFormProps = {
-    txt: string,
-    setTxt: React.Dispatch<React.SetStateAction<string>>
-    addTodo: () => void
+    addTodo: (name:string) => void
 }
 
-const TodoForm = ({txt, setTxt, addTodo}: TodoFormProps) =>{
+const TodoForm = ({addTodo}: TodoFormProps) =>{
+    const [txt,setTxt] = useState<string>('')
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         txt.trim() &&
-        addTodo()
+        addTodo(txt)
         setTxt('')
     }
 
